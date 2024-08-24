@@ -1,0 +1,9 @@
+Starting the Server:
+Run npm install to install dependencies.
+Run nodemon index.js to start the server.
+Note the last address in the terminal; it should be blogpageserver.
+
+Starting the Blog Page Client:
+Run npm install to install dependencies.
+Run npm run dev to start the client.
+Note the last address in the terminal; it should be blogpage client

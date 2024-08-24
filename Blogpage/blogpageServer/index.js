@@ -1,0 +1,20 @@
+const db_Connection = require("./dbconnection/db");
+const http = require("http");
+const rateLimit = require("express-rate-limit");
+const express = require("express");
+const authroute = require("./auth/auth");
+const confiqfile = require("./envConfiq");
+const blogroute = require("./blogroute/blog");
+const fileroute = require("./uploadfiles/fileread");
+const cors = require("cors");
+const app = express();
+app.use(express.json());
+app.use(cors({ origin: true }));
+db_Connection();
+app.use("/user", authroute);
+app.use("/blog", blogroute);
+app.use("/", fileroute);
+const server = http.createServer(app);
+server.listen(confiqfile.port, () => {
+  console.log("port is running on", confiqfile.port);
+});

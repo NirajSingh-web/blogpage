@@ -1,0 +1,6 @@
+table th, table td{
+    padding: 13px;
+}
+table tr:nth-child(even) td{
+ background-color: rgb(227, 227, 227);
+}
